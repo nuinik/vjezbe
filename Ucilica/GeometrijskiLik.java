@@ -1,6 +1,6 @@
 package Ucilica;
 
-public abstract class GeometrijskiLik {
+public abstract class GeometrijskiLik implements Comparable<GeometrijskiLik> {
 
     private String naziv;
 
@@ -21,6 +21,11 @@ public abstract class GeometrijskiLik {
 
     @Override
     public String toString() {
-        return "";
+        return "Naziv:%s, površina:%f, opseg:%f".formatted(naziv,povrsina(),opseg());
+    }
+
+    @Override
+    public int compareTo(GeometrijskiLik other) {
+        return Double.valueOf(povrsina()).compareTo(Double.valueOf(other.povrsina()));
     }
 }
