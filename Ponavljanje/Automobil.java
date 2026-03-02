@@ -1,23 +1,12 @@
 package Ponavljanje;
 
-public class Automobil implements Ubrzanje {
+public class Automobil extends Vozilo {
 
-    private String marka;
     private int vrata;
-    private int brzina;
 
     public Automobil (String marka, int vrata, int brzina){
-        this.marka = marka;
+        super(marka, brzina);
         this.vrata = vrata;
-        this.brzina = brzina;
-    }
-
-    public String getMarka() {
-        return marka;
-    }
-
-    public void setMarka(String marka){
-        this.marka = marka;
     }
 
     public int getVrata() {
@@ -28,22 +17,11 @@ public class Automobil implements Ubrzanje {
         this.vrata = vrata;
     }
 
-    public int getBrzina() {
-        return brzina;
-    }
-
-    public void setBrzina(int brzina) {
-        this.brzina = brzina;
-    }
 
     @Override
-    public void ubrzaj(int iznos) {
-        brzina += iznos;
-    }
-
     public void prikažiPodatke() {
-        System.out.println("Marka automobila: " + marka);
-        System.out.println("Brzina: " + brzina);
+        System.out.println("Marka automobila: " + getMarka());
+        System.out.println("Brzina: " + getBrzina());
         System.out.println("Broj vrata: " + vrata);
 
     }
